@@ -1,5 +1,7 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
+import project1Image from "../assets/project1.png";
+import project2Image from "../assets/project2.png";
 
 const ProjectsSection = () => {
   const projects = [
@@ -16,7 +18,7 @@ const ProjectsSection = () => {
         "redux-toolkit",
         "nodemailer",
       ],
-      image: "../assets/project1.png",
+      image: project1Image,
       live: "https://www.campusvoice.in/",
     },
     {
@@ -24,7 +26,7 @@ const ProjectsSection = () => {
       title: "Clinical Medication Reconciliation & Conflict Detection System",
       desc: "FastAPI-based backend for multi-source medication reconciliation with rule-based conflict detection, versioned audit trails, and RESTful APIs deployed on Render.",
       tech: ["FastAPI", "Python", "MongoDB", "Pydantic", "Pytest"],
-      image: "../assets/project2.png",
+      image: project2Image,
       live: "https://med-reconciliation-7320.onrender.com",
     },
   ];

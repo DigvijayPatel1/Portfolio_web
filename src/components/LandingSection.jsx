@@ -1,5 +1,6 @@
 import React from "react";
 import { BriefcaseBusiness, SquareTerminal } from "lucide-react";
+import avatarImage from "../assets/avatar.jpg";
 
 const LandingSection = () => {
   return (
@@ -68,7 +69,7 @@ const LandingSection = () => {
 
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl p-4 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)]">
             <img
-              src="../assets/avatar.jpg"
+              src={avatarImage}
               alt="Avatar Placeholder"
               className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-700"
             />
