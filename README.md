@@ -1,16 +1,68 @@
-# React + Vite
+# Portfolio Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Run Locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Build
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build
+npm run preview
+```
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+portfolio_web/
+├─ public/
+│  ├─ favicon.svg
+│  └─ icons.svg
+├─ src/
+│  ├─ assets/
+│  │  ├─ avatar.jpg
+│  │  ├─ hero.png
+│  │  ├─ project1.png
+│  │  ├─ project2.png
+│  │  ├─ react.svg
+│  │  └─ vite.svg
+│  ├─ components/
+│  │  ├─ Navbar.jsx
+│  │  ├─ LandingSection.jsx
+│  │  ├─ ProjectsSection.jsx
+│  │  ├─ OtherProjectsSection.jsx
+│  │  ├─ SkillsSection.jsx
+│  │  └─ ContactSection.jsx
+│  ├─ layouts/
+│  │  └─ AppShell.jsx
+│  ├─ pages/
+│  │  ├─ HomePage.jsx
+│  │  ├─ ProjectsPage.jsx
+│  │  ├─ SkillsPage.jsx
+│  │  └─ ContactPage.jsx
+│  ├─ App.jsx
+│  ├─ index.css
+│  └─ main.jsx
+├─ .gitignore
+├─ eslint.config.js
+├─ index.html
+├─ package.json
+├─ package-lock.json
+├─ vercel.json
+└─ vite.config.js
+```
+
+## Routing
+
+Configured in `src/main.jsx` using `react-router-dom`:
+
+- `/` -> Home page
+- `/projects` -> Projects page
+- `/skills` -> Skills page
+- `/contact` -> Contact page
+- `*` -> Redirects to `/`
