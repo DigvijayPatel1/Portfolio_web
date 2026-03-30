@@ -66,12 +66,12 @@ const Navbar = () => {
 
         <button
           type="button"
-          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/20 bg-white/10 text-white [webkit-tap-highlight-color:transparent] focus:outline-none"
+          className={`md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/20 bg-white/10 backdrop-blur-xl text-white [webkit-tap-highlight-color:transparent] focus:outline-none transition-all duration-200 ${isMenuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
         >
-          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          <Menu size={20} />
         </button>
       </div>
 
@@ -85,7 +85,7 @@ const Navbar = () => {
           className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
         />
         <div
-          className={`absolute left-0 top-0 h-full w-[85%] max-w-[320px] bg-[#050505] border-r border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
+          className={`absolute left-0 top-0 h-full w-[85%] max-w-[320px] bg-black/70 backdrop-blur-2xl border-r border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
           <div className="px-4 pt-6 pb-4 flex justify-end border-b border-white/10">
             <button
