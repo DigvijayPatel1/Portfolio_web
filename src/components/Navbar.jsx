@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronRight, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -15,8 +15,12 @@ const Navbar = () => {
   useEffect(() => {
     if (!isMenuOpen) return;
     const closeMenu = () => setIsMenuOpen(false);
+    document.body.style.overflow = "hidden";
     window.addEventListener("resize", closeMenu);
-    return () => window.removeEventListener("resize", closeMenu);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("resize", closeMenu);
+    };
   }, [isMenuOpen]);
 
   const navItems = [
@@ -71,25 +75,53 @@ const Navbar = () => {
         </button>
       </div>
 
-      {isMenuOpen && (
-        <div className="md:hidden max-w-6xl mx-auto px-4 mt-2">
-          <div className="bg-black/80 backdrop-blur-xl border border-white/15 rounded-2xl p-3 shadow-[0_8px_32px_rgba(0,0,0,0.8)]">
-            <ul className="flex flex-col gap-2 text-sm tracking-wide text-gray-200 font-medium">
-              {navItems.map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block px-3 py-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+      <div
+        className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ${isMenuOpen ? "pointer-events-auto" : "pointer-events-none"}`}
+      >
+        <button
+          type="button"
+          aria-label="Close mobile menu backdrop"
+          onClick={() => setIsMenuOpen(false)}
+          className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
+        />
+        <div
+          className={`absolute left-0 top-0 h-full w-[85%] max-w-[320px] bg-[#071327] border-r border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
+        >
+          <div className="px-4 pt-6 pb-5 border-b border-white/10 bg-white/5">
+            <div className="flex justify-between items-start">
+              <div>
+                <p className="text-white text-xl font-semibold">Digvijay Patel</p>
+                <a href="/contact" className="text-emerald-400 text-sm">
+                  View Profile
+                </a>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-300 hover:text-white"
+                aria-label="Close menu"
+              >
+                <X size={20} />
+              </button>
+            </div>
           </div>
+
+          <ul className="pt-2">
+            {navItems.map((item) => (
+              <li key={item.label} className="border-b border-white/10">
+                <a
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="px-4 py-4 flex items-center justify-between text-gray-200 hover:bg-white/5 transition-colors duration-200"
+                >
+                  <span>{item.label}</span>
+                  <ChevronRight size={16} className="text-gray-500" />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
