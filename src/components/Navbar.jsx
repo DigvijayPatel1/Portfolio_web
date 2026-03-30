@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ChevronRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -66,7 +66,7 @@ const Navbar = () => {
 
         <button
           type="button"
-          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/20 bg-white/10 text-white"
+          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/20 bg-white/10 text-white [webkit-tap-highlight-color:transparent] focus:outline-none"
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
@@ -85,25 +85,17 @@ const Navbar = () => {
           className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
         />
         <div
-          className={`absolute left-0 top-0 h-full w-[85%] max-w-[320px] bg-[#071327] border-r border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
+          className={`absolute left-0 top-0 h-full w-[85%] max-w-[320px] bg-[#050505] border-r border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
-          <div className="px-4 pt-6 pb-5 border-b border-white/10 bg-white/5">
-            <div className="flex justify-between items-start">
-              <div>
-                <p className="text-white text-xl font-semibold">Digvijay Patel</p>
-                <a href="/contact" className="text-emerald-400 text-sm">
-                  View Profile
-                </a>
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-300 hover:text-white"
-                aria-label="Close menu"
-              >
-                <X size={20} />
-              </button>
-            </div>
+          <div className="px-4 pt-6 pb-4 flex justify-end border-b border-white/10">
+            <button
+              type="button"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-300 hover:text-white [webkit-tap-highlight-color:transparent] focus:outline-none"
+              aria-label="Close menu"
+            >
+              <X size={20} />
+            </button>
           </div>
 
           <ul className="pt-2">
@@ -112,10 +104,9 @@ const Navbar = () => {
                 <a
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="px-4 py-4 flex items-center justify-between text-gray-200 hover:bg-white/5 transition-colors duration-200"
+                  className="px-4 py-4 block text-gray-200 hover:bg-white/5 active:bg-white/10 transition-colors duration-200 [webkit-tap-highlight-color:transparent] focus:outline-none"
                 >
-                  <span>{item.label}</span>
-                  <ChevronRight size={16} className="text-gray-500" />
+                  {item.label}
                 </a>
               </li>
             ))}
