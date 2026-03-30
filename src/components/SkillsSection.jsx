@@ -24,9 +24,7 @@ const SkillsSection = () => {
     <section id="skills" className="py-24 px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-extrabold text-white mb-16 flex items-center justify-center gap-4 text-center">
-          <span className="w-8 h-[2px] bg-white block"></span>
           Technical Arsenal
-          <span className="w-8 h-[2px] bg-white block"></span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

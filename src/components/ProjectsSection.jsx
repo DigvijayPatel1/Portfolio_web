@@ -35,7 +35,6 @@ const ProjectsSection = () => {
     <section id="projects" className="py-24 px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-extrabold text-white mb-16 flex items-center gap-4">
-          <span className="w-12 h-[2px] bg-white block"></span>
           Featured Work
         </h2>
 
