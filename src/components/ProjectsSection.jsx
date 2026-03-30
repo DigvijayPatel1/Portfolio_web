@@ -32,17 +32,17 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 px-6 relative z-10">
+    <section id="projects" className="py-16 md:py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-white mb-16 flex items-center gap-4">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-10 md:mb-16 flex items-center gap-4">
           Featured Work
         </h2>
 
-        <div className="space-y-16">
+        <div className="space-y-10 md:space-y-16">
           {projects.map((p, i) => (
             <div
               key={i}
-              className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-3xl p-6 md:p-8 hover:bg-white/[0.05] hover:border-white/20 transition-all duration-500 shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
+              className="group relative grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 hover:bg-white/[0.05] hover:border-white/20 transition-all duration-500 shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
             >
               {/* IMAGE */}
               <div
@@ -52,7 +52,7 @@ const ProjectsSection = () => {
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-64 md:h-80 object-cover grayscale group-hover:grayscale-0 transform group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-52 sm:h-64 md:h-80 object-cover grayscale group-hover:grayscale-0 transform group-hover:scale-105 transition-all duration-700"
                 />
               </div>
 
@@ -63,12 +63,12 @@ const ProjectsSection = () => {
                 <p className="text-gray-400 text-sm font-medium tracking-wide uppercase">
                   {p.role}
                 </p>
-                <h3 className="text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all duration-300">
+                <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all duration-300">
                   {p.title}
                 </h3>
 
                 {/* Intense Glass Box */}
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl text-gray-300 leading-relaxed shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-4 md:p-6 rounded-2xl text-gray-300 text-sm md:text-base leading-relaxed shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                   {p.desc}
                 </div>
 

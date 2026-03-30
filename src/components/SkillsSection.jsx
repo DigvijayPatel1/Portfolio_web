@@ -21,25 +21,25 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 px-6 relative z-10">
+    <section id="skills" className="py-16 md:py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-white mb-16 flex items-center justify-center gap-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-10 md:mb-16 flex items-center justify-center gap-4 text-center">
           Technical Arsenal
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
           {categories.map((cat, idx) => (
             <div
               key={idx}
-              className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-center flex flex-col items-center shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+              className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-center flex flex-col items-center shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
             >
               {cat.icon}
-              <h3 className="text-xl font-bold text-white mb-6">{cat.title}</h3>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-5 md:mb-6">{cat.title}</h3>
               <ul className="space-y-3 w-full">
                 {cat.items.map((item, i) => (
                   <li
                     key={i}
-                    className="text-gray-300 bg-white/5 backdrop-blur-md rounded-xl py-3 px-4 text-sm font-medium border border-white/10"
+                    className="text-gray-300 bg-white/5 backdrop-blur-md rounded-xl py-2.5 px-3 md:py-3 md:px-4 text-sm font-medium border border-white/10"
                   >
                     {item}
                   </li>

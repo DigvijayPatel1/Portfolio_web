@@ -19,9 +19,9 @@ const OtherProjectsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 relative z-10">
+    <section className="py-14 md:py-20 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-10">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 md:mb-10">
           Other Experiments
         </h2>
 
@@ -29,7 +29,7 @@ const OtherProjectsSection = () => {
           {projects.map((p, i) => (
             <div
               key={i}
-              className="group bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(255,255,255,0.05)] hover:border-white/30 transition-all duration-500 flex flex-col justify-between min-h-[280px]"
+              className="group bg-white/5 backdrop-blur-xl border border-white/10 p-5 sm:p-8 rounded-2xl md:rounded-3xl hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(255,255,255,0.05)] hover:border-white/30 transition-all duration-500 flex flex-col justify-between min-h-[260px] md:min-h-[280px]"
             >
               <div>
                 <div className="flex justify-between items-start mb-6">
@@ -46,7 +46,7 @@ const OtherProjectsSection = () => {
                   </a>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gray-300 transition-colors">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-gray-300 transition-colors">
                   {p.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-6">
