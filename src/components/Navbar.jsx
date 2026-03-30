@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -9,6 +11,20 @@ const Navbar = () => {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const closeMenu = () => setIsMenuOpen(false);
+    window.addEventListener("resize", closeMenu);
+    return () => window.removeEventListener("resize", closeMenu);
+  }, [isMenuOpen]);
+
+  const navItems = [
+    { label: "HOME", href: "/" },
+    { label: "PROJECTS", href: "/projects" },
+    { label: "SKILLS", href: "/skills" },
+    { label: "CONTACT", href: "/contact" },
+  ];
 
   return (
     <nav
@@ -25,45 +41,16 @@ const Navbar = () => {
         </a>
 
         <ul className="hidden md:flex gap-8 text-sm tracking-widest text-gray-400 font-medium">
-          <li>
-            <a
-              href="/"
-              className="hover:text-white transition-colors duration-300"
-            >
-              HOME
-            </a>
-          </li>
-          <li>
-            <a
-              href="/projects"
-              className="hover:text-white transition-colors duration-300"
-            >
-              PROJECTS
-            </a>
-          </li>
-          <li>
-            <a
-              href="/skills"
-              className="hover:text-white transition-colors duration-300"
-            >
-              SKILLS
-            </a>
-          </li>
-          <li>
-            <a
-              href="/contact"
-              className="hover:text-white transition-colors duration-300"
-            >
-              CONTACT
-            </a>
-          </li>
-        </ul>
-
-        <ul className="md:hidden flex items-center gap-2 text-[11px] tracking-wide text-gray-300 font-medium">
-          <li><a href="/" className="px-2 py-1 rounded-lg bg-white/5 border border-white/10">HOME</a></li>
-          <li><a href="/projects" className="px-2 py-1 rounded-lg bg-white/5 border border-white/10">WORK</a></li>
-          <li><a href="/skills" className="px-2 py-1 rounded-lg bg-white/5 border border-white/10">SKILLS</a></li>
-          <li><a href="/contact" className="px-2 py-1 rounded-lg bg-white/5 border border-white/10">CONTACT</a></li>
+          {navItems.map((item) => (
+            <li key={item.label}>
+              <a
+                href={item.href}
+                className="hover:text-white transition-colors duration-300"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
 
         <a
@@ -72,7 +59,37 @@ const Navbar = () => {
         >
           RESUME
         </a>
+
+        <button
+          type="button"
+          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/20 bg-white/10 text-white"
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+        >
+          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
       </div>
+
+      {isMenuOpen && (
+        <div className="md:hidden max-w-6xl mx-auto px-4 mt-2">
+          <div className="bg-black/80 backdrop-blur-xl border border-white/15 rounded-2xl p-3 shadow-[0_8px_32px_rgba(0,0,0,0.8)]">
+            <ul className="flex flex-col gap-2 text-sm tracking-wide text-gray-200 font-medium">
+              {navItems.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-3 py-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
