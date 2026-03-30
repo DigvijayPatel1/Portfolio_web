@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Linkedin } from "lucide-react";
+import { BriefcaseBusiness, SquareTerminal } from "lucide-react";
 
 const LandingSection = () => {
   return (
@@ -42,7 +42,7 @@ const LandingSection = () => {
               rel="noreferrer"
               className="text-gray-400 hover:text-white transition-colors hover:scale-110 duration-300"
             >
-              <Github size={28} />
+              <SquareTerminal size={28} />
             </a>
             <a
               href="https://www.linkedin.com/in/digvijay-patel123/"
@@ -50,7 +50,7 @@ const LandingSection = () => {
               rel="noreferrer"
               className="text-gray-400 hover:text-white transition-colors hover:scale-110 duration-300"
             >
-              <Linkedin size={28} />
+              <BriefcaseBusiness size={28} />
             </a>
             <a
               href="#"
