@@ -1,0 +1,37 @@
+import React from "react";
+
+const ContactSection = () => {
+  return (
+    <section id="contact" className="py-32 px-6 relative z-10">
+      <div className="max-w-3xl mx-auto text-center bg-white/5 backdrop-blur-3xl border border-white/20 rounded-[3rem] p-12 md:p-20 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative overflow-hidden">
+        {/* Inner Glass Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-white/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+        <Mail className="mx-auto text-white mb-6 relative z-10" size={48} />
+
+        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 relative z-10">
+          Let's Build The Future
+        </h2>
+
+        <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto relative z-10">
+          Currently open to new opportunities. Whether you have a question, a
+          project idea, or just want to say hi, my inbox is always open.
+        </p>
+
+        <a
+          href="mailto:dpat19122@gmail.com"
+          className="inline-block px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-full hover:bg-white hover:text-black hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-105 transition-all duration-300 relative z-10"
+        >
+          dpat19122@gmail.com
+        </a>
+      </div>
+
+      <div className="max-w-6xl mx-auto mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <p>Built with React & Tailwind CSS.</p>
+        <p>Copyright © 2026 — Digvijay Patel</p>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;
