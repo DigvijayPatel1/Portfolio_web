@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BriefcaseBusiness, SquareTerminal } from "lucide-react";
 import avatarImage from "../assets/avatar.jpg";
 
+const roles = ["Developer", "Data Scientist", "Problem Solver"];
+
 const LandingSection = () => {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+    let timeoutId;
+
+    if (!isDeleting && displayText.length < currentRole.length) {
+      timeoutId = setTimeout(() => {
+        setDisplayText(currentRole.slice(0, displayText.length + 1));
+      }, 90);
+    } else if (!isDeleting && displayText.length === currentRole.length) {
+      timeoutId = setTimeout(() => setIsDeleting(true), 1400);
+    } else if (isDeleting && displayText.length > 0) {
+      timeoutId = setTimeout(() => {
+        setDisplayText(currentRole.slice(0, displayText.length - 1));
+      }, 45);
+    } else if (isDeleting && displayText.length === 0) {
+      setIsDeleting(false);
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [displayText, isDeleting, roleIndex]);
+
   return (
     <section
       id="home"
@@ -27,7 +55,11 @@ const LandingSection = () => {
           </h1>
 
           <h2 className="text-2xl md:text-3xl font-light text-gray-400">
-            I am a <span className="text-white font-medium">Developer</span>
+            I am a{" "}
+            <span className="text-white font-medium">
+              {displayText}
+              <span className="animate-pulse">|</span>
+            </span>
           </h2>
 
           <p className="max-w-xl text-gray-400 leading-relaxed text-lg mx-auto md:mx-0">
