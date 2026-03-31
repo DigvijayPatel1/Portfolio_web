@@ -57,15 +57,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <a
-          href="https://drive.google.com/file/d/1Ll673EU8MEvAgJ9-KdBNYshIOVL9KTSp/view?usp=sharing"
-          target="_blank"
-          rel="noreferrer"
-          className="hidden md:block px-6 py-2 rounded-full border border-white/30 text-white text-sm font-medium hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300"
-        >
-          RESUME
-        </a>
-
         <button
           type="button"
           className={`md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/20 bg-white/10 backdrop-blur-xl text-white [webkit-tap-highlight-color:transparent] focus:outline-none transition-all duration-200 ${isMenuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
@@ -112,17 +103,6 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
-            <li className="p-4">
-              <a
-                href="https://drive.google.com/file/d/1Ll673EU8MEvAgJ9-KdBNYshIOVL9KTSp/view?usp=sharing"
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => setIsMenuOpen(false)}
-                className="block w-full rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-center text-sm font-semibold tracking-wider text-white hover:bg-white/20 active:bg-white/25 transition-colors duration-200 [webkit-tap-highlight-color:transparent] focus:outline-none"
-              >
-                RESUME
-              </a>
-            </li>
           </ul>
         </div>
       </div>
