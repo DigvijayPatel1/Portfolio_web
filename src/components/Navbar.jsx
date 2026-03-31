@@ -112,6 +112,17 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
+            <li className="p-4">
+              <a
+                href="https://drive.google.com/file/d/1Ll673EU8MEvAgJ9-KdBNYshIOVL9KTSp/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-center text-sm font-semibold tracking-wider text-white hover:bg-white/20 active:bg-white/25 transition-colors duration-200 [webkit-tap-highlight-color:transparent] focus:outline-none"
+              >
+                RESUME
+              </a>
+            </li>
           </ul>
         </div>
       </div>
