@@ -35,7 +35,7 @@ const Navbar = () => {
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "py-3 md:py-4" : "py-4 md:py-6"}`}
     >
       <div
-        className={`max-w-6xl mx-auto px-4 md:px-12 flex items-center justify-between gap-4 transition-all duration-500 ${scrolled ? "bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl md:rounded-full py-3 shadow-[0_8px_32px_rgba(0,0,0,0.8)]" : "bg-transparent"}`}
+        className={`max-w-6xl mx-auto px-4 md:px-12 flex items-center justify-between gap-4 transition-all duration-500 ${scrolled ? "bg-white/10 backdrop-blur-xl rounded-2xl md:rounded-full overflow-hidden py-3 shadow-[0_8px_32px_rgba(0,0,0,0.8)]" : "bg-transparent"}`}
       >
         <a
           href="/"
