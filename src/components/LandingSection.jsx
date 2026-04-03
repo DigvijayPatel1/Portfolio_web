@@ -88,7 +88,7 @@ const LandingSection = () => {
               <BriefcaseBusiness size={28} />
             </a>
             <a
-              href="https://drive.google.com/file/d/1Ll673EU8MEvAgJ9-KdBNYshIOVL9KTSp/view?usp=sharing"
+              href="https://drive.google.com/file/d/1WJs502--SDqjApSPfEDEA1rD8jtMrVai/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className="px-6 sm:px-8 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm sm:text-base font-bold tracking-wide hover:bg-white hover:text-black hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all duration-300"
